@@ -1,6 +1,10 @@
 import Head from 'next/head'
+import PropTypes from "prop-types";
 
-export default function Home() {
+import Link from "next/link";
+
+const Home = ({isOpen}) => {
+
   return (
     <div className="container">
       <Head>
@@ -9,8 +13,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+
+        <h1 className="title font-bold underline">
+          Neki neki to <Link href="/posts/first-post">First Post</Link>
         </h1>
 
         <p className="description">
@@ -207,3 +212,13 @@ export default function Home() {
     </div>
   )
 }
+
+Home.propTypes = {
+  isOpen: PropTypes.bool
+};
+
+Home.defaultProps = {
+  isOpen: false
+}
+
+export default Home;
